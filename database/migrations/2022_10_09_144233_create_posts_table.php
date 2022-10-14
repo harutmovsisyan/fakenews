@@ -17,18 +17,19 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->unsignedBigInteger('owner_id');
+            $table->foreignIdFor(User::class, 'owner_id')->index()->constrained('users');;
             $table->foreignIdFor(Category::class, 'category_id')->nullable()->index()->constrained();;
             $table->boolean('is_published');
             $table->softDeletes('deleted_at');
             $table->timestamps();
+
 
 //            $table->index('category_id', 'post_category_idx');
 //            $table->foreign('category_id', 'post_category_fk')->on('categories')->references('id');
         });
     }
 
-//    title | content | category | author | photo | tags | timestamp
+
 
     /**
      * Reverse the migrations.

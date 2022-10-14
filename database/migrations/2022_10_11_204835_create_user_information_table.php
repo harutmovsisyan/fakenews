@@ -16,8 +16,8 @@ return new class extends Migration
     {
         Schema::create('user_information', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class,'user_id')->index()->constrained();;
-            $table->integer('role');
+            $table->foreignIdFor(User::class,'user_id')->index()->constrained()->onDelete('cascade');;
+            $table->foreignIdFor(Role::class, 'role_id')->constrained();
             $table->string('photo_path')->nullable();
             $table->timestamps();
         });
