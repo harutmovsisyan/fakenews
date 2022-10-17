@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Post;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        //
+//        $post = Post::factory(10)->make();
+//        dd(pos($post);
     }
 }
