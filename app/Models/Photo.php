@@ -10,4 +10,8 @@ class Photo extends Model
     use HasFactory;
     protected $table = 'photos';
     protected $guarded = false;
+
+    public function post(){
+        return $this->belongsTo(Post::class, 'id');
+    }
 }

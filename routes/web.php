@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'postController');
+Route::get('/', 'indexController');
 
 //Route::get('/', 'indexController@index')
 //    ->name('index');

@@ -11,4 +11,8 @@ class UserInformation extends Model
     protected $table = 'user_information';
     protected $guarded = [];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id');
+    }
 }
