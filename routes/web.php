@@ -13,12 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'indexController');
 
-//Route::get('/', 'indexController@index')
-//    ->name('index');
-//Route::get('/', 'homeController@index')
-//    ->name('home');
+
+//Route::group('', function (){
+//    Route::get('/', 'indexController');
+//});
+
+Route::prefix('/')->group( function (){
+    Route::get('/', 'indexController');
+});
+
+//Route::prefix('author')->group( function (){
+//    Route::get('/', 'indexController');
+//});
+
 
 Route::get('/article', function () {
     return view('article');
